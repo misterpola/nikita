@@ -47,15 +47,14 @@
     var webkit = !!ua.match(/WebKit/i);
     var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
 
-    if (iOSSafari){
-      var htmlHeight = $(html).height();
-      $(html).css('height', htmlHeight - 44);
-      alert (htmlHeight - 44);
-    } else {
-      alert ('not safari');
-    }
-
     $(document).ready(function(){
+      if (iOSSafari){
+        var htmlHeight = $('html, body, .wrapper, .layer, .content-wrap').height();
+        $('html, body, .wrapper, .layer, .content-wrap').css('height', htmlHeight - 44);
+        alert (htmlHeight - 44);
+      } else {
+        alert ('not safari');
+      }
       var viewportWidth = $("body").innerWidth();
       $('.image-top').on('click',function(){
         
