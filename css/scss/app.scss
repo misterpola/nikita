@@ -1,0 +1,11 @@
+*{
+    background-repeat: no-repeat;
+}
+body{
+    background-color: #000;
+}
+
+@import 'base.scss';
+@import 'mixins.scss';
+@import 'landing.scss';
+@import 'capture.scss';

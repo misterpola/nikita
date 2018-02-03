@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+
+</head>
+
+<body class="fade-in">
+  <nav class="navbar navbar-expand-xs navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+  <div class="collapse navbar-collapse" id="nav">
+    <div class="full navbar-nav text-center d-flex flex-column align-items-center justify-content-center">
+      <a class="nav-item nav-link text-white" href="#">CAPTURE</a>
+      <a class="nav-item nav-link text-white" href="#">EXPRESS</a>
+      <a class="nav-item nav-link text-white" href="#">CONTACT</a>
+    </div>
+  </div>
+
+  <div class="container-fluid landing d-flex align-items-end justify-content-center">
+
+  </div>
+  <div class="arrowBounce"></div>
+  <div class="big-image fixed-top"></div>
+  <div class="images">
+    <p>You can put original size photos </p>
+    <img class="lazy" data-src="img/4.jpg" alt="">
+    <img class="lazy" data-src="img/6.jpg" alt="">
+    <img class="lazy" data-src="img/1.jpg" alt="">
+    <p>Photos with some text like title or description or history</p>
+    <div class="card text-white">
+      <img class="lazy card-img" src="img/3.jpg" alt="Card image">
+      <div class="card-img-overlay d-flex flex-column justify-content-end">
+        <h5 class="card-title">Photo title</h5>
+        <p class="card-text">Photo text and description</p>
+      </div>
+    </div>
+    <p>Small photos, if you click they go big</p>
+    <div>
+      <img class="lazy squared" data-src="img/5.jpg" alt="">
+      <img class="lazy squared" data-src="img/4.jpg" alt="">
+    </div>
+    <p>Or just mix! Some photos original size, some photos small.</p>
+  </div>
+
+  <p>I think video slider is good idea</p>
+  <!-- Slider main container -->
+  <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+        <div class="swiper-slide"> 
+          <div class="card">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QzdoJd5nQZg?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
+            </div>
+            <div class="card-body px-5 py-0">
+              <h5 class="card-title text-center display-4 mb-2">Desert</h5>
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide"> 
+          <div class="card">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Ld0MbF6yMvc?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>              
+            </div>
+              <div class="card-body px-5 py-0">
+              <h5 class="card-title text-center display-4 mb-2">Croatia</h5>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev swiper-button-white"></div>
+    <div class="swiper-button-next swiper-button-white"></div>
+  </div>  
+  <footer>
+    <img src="img/logo.jpg" alt="">
+    <a href="" class="text-light"> Web by Gonz </a>
+  </footer>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/jquery.lazy.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.lazy').Lazy({
+        // your configuration goes here
+        scrollDirection: 'vertical',
+        effect: 'fadeIn',
+        visibleOnly: true,
+        onError: function(element) {
+            console.log('error loading ' + element.data('src'));
+        }});
+
+      $('body').animate({
+        opacity: 1
+      }, 200);
+
+      $('.squared').on('click',function(){
+      		var $source = $(this).attr('src');
+
+          $(".big-image").css({
+      			'background-image': "url('" + $source + "')",
+            'z-index': '9999'     			
+      		});
+
+          $('.big-image').animate({
+             opacity: 1
+          },200);
+
+      		$("body").css("overflow","hidden");
+      	});
+
+      $('.big-image').on('click', function(){
+        $('.big-image').animate({
+            opacity: 0
+        },200, function(){
+          $(".big-image").css({
+            'background-image': 'none',
+            'z-index': '-9999'     			
+          });
+        });
+      
+        $("body").css("overflow","visible");
+      })
+
+    });
+
+    var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      loop: true,
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+
+  </script>
+</body>
+
+</html>

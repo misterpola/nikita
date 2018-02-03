@@ -1,0 +1,123 @@
+.full{
+    width: 100%;
+    min-height: 100vh;
+}
+
+#nav{
+    background-color: rgba(0,0,0,0.98);
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    .nav-link{
+        width: 100%;
+        font-size: 250%;
+        margin: 1em auto;
+    }
+}
+
+.landing{
+    height: 100vh;
+    background-image: url("../img/capture.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 2em;
+}
+
+.arrowBounce {
+    position: absolute;
+    margin: auto;
+    bottom: 1em;
+    left: 0; right: 0;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    -webkit-animation: bounce 2s infinite ease-in-out;
+    background-image: url('../img/up-arrow.svg');
+  	background-size: contain;
+
+}
+@-webkit-keyframes bounce {
+	0%, 20%, 60%, 100%  { -webkit-transform: translateY(0); }
+    40%  { -webkit-transform: translateY(-20px); }
+	80% { -webkit-transform: translateY(-10px); }
+}
+.fade-in{
+    opacity: 0;
+}
+
+.gear{
+    div{
+        padding: 1em;
+        text-align: right;
+        background: #ccc;
+        border: 1px black;
+        &:nth-child(even){
+            text-align: left
+        }
+    }
+
+}
+
+/*.card-columns{
+    column-count: 2;
+    margin-top: 5em;
+    .card{
+        display: inline-block;
+        border: none;
+    }
+}*/
+
+.big-image{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: -10;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    background-size: contain;
+    background-position: center;
+}
+p{
+    width: 85%;
+    margin: 0 auto;
+    color: white;
+}
+.images{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    
+    img{
+        width: 90%;
+        height: auto;
+        margin: 2.5% 5%;
+        float: left;
+        display: block;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        outline: solid 1px black;     
+    }
+    .squared{
+        width: 42.50%;
+        margin-left:5%;
+        margin-right: 2.5%;
+        &:nth-child(even){
+            margin-left: 2.5%;
+            margin-right: 5%;
+        }
+    }
+}
+.card{
+    background-color: black;
+
+    .card-img-overlay{
+        padding: 5% 7.5%;
+    }
+}
+
+.swiper-button-white{
+    opacity: 0.1;
+}
