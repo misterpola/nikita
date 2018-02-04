@@ -59,9 +59,10 @@
       <!-- Slides -->
         <div class="swiper-slide"> 
           <div class="card">
-            <div class="embed-responsive embed-responsive-16by9">
+            <div class="lazy embed-responsive embed-responsive-16by9" data-loader="youtubeLoader" data-video="tH2TvzgFCU0"></div>
+            <!--<div class="embed-responsive embed-responsive-16by9">
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QzdoJd5nQZg?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
-            </div>
+            </div> -->
             <div class="card-body px-5 py-0">
               <h5 class="card-title text-center display-4 mb-2">Desert</h5>
               <p class="card-text"></p>
@@ -70,9 +71,9 @@
         </div>
         <div class="swiper-slide"> 
           <div class="card">
-            <div class="embed-responsive embed-responsive-16by9">
+            <!--<div class="embed-responsive embed-responsive-16by9">
               <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Ld0MbF6yMvc?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>              
-            </div>
+            </div>-->
               <div class="card-body px-5 py-0">
               <h5 class="card-title text-center display-4 mb-2">Croatia</h5>
             </div>
@@ -105,17 +106,31 @@
     });
     
     $(document).ready(function () {
+
       $('body').animate({
         opacity: 1
       }, 700,function(){
+        
         $('.lazy').Lazy({
-        // your configuration goes here
-        scrollDirection: 'vertical',
-        effect: 'fadeIn',
-        visibleOnly: true,
-        onError: function(element) {
-            console.log('error loading ' + element.data('src'));
-        }});
+          // your configuration goes here
+          scrollDirection: 'vertical',
+          effect: 'fadeIn',
+          visibleOnly: true,
+          onError: function(element) {
+              console.log('error loading ' + element.data('src'));
+          },
+          youtubeLoader: function(element) {
+            var url = 'https://www.youtube.com/embed/',
+            frame = $('<iframe />')
+
+            frame.attr('width', 700)
+            frame.attr('height', 394)
+            frame.attr('frameborder', 0)
+            frame.attr('src', url + element.data("video"));
+
+            element.append(frame).load();
+          }
+        });
 
 
       $('.squared').on('click',function(){
