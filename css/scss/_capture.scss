@@ -16,7 +16,7 @@
 }
 
 .landing{
-    height: 100vh;
+    height: 100%;
     background-image: url("../img/capture.jpg");
     background-attachment: fixed;
     background-position: center;
@@ -44,7 +44,7 @@
 	80% { -webkit-transform: translateY(-10px); }
 }
 .fade-in{
-    opacity: 0;
+    opacity: 0.01;
 }
 
 .gear{
