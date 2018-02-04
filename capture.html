@@ -37,7 +37,7 @@
     <img class="lazy" data-src="img/1.jpg" alt="">
     <p>Photos with some text like title or description or history</p>
     <div class="card text-white">
-      <img class="lazy card-img" src="img/3.jpg" alt="Card image">
+      <img class="lazy card-img" data-src="img/3.jpg" alt="Card image">
       <div class="card-img-overlay d-flex flex-column justify-content-end">
         <h5 class="card-title">Photo title</h5>
         <p class="card-text">Photo text and description</p>
@@ -92,6 +92,18 @@
   <script src="js/swiper.min.js"></script>
   <script src="js/jquery.lazy.min.js"></script>
   <script>
+    
+    var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      loop: true,
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+    
     $(document).ready(function () {
       $('body').animate({
         opacity: 1
@@ -137,17 +149,6 @@
         $("body").css("overflow","visible");
       })
 
-    });
-
-    var mySwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
-      loop: true,
-
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      }
     });
 
   </script>
