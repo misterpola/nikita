@@ -93,8 +93,10 @@
   <script src="js/jquery.lazy.min.js"></script>
   <script>
     $(document).ready(function () {
-
-      $('.lazy').Lazy({
+      $('body').animate({
+        opacity: 1
+      }, 7000,function(){
+        $('.lazy').Lazy({
         // your configuration goes here
         scrollDirection: 'vertical',
         effect: 'fadeIn',
@@ -118,6 +120,9 @@
 
       		$("body").css("overflow","hidden");
       	});
+      });
+
+      
 
       $('.big-image').on('click', function(){
         $('.big-image').animate({
@@ -132,10 +137,6 @@
         $("body").css("overflow","visible");
       })
 
-      $('body').animate({
-        opacity: 1
-      }, 300,);
-      
     });
 
     var mySwiper = new Swiper ('.swiper-container', {
