@@ -133,36 +133,37 @@
         });
 
 
-      $('.squared').on('click',function(){
-      		var $source = $(this).attr('src');
+        $('.squared').on('click',function(){
+            var $source = $(this).attr('src');
 
-          $(".big-image").css({
-      			'background-image': "url('" + $source + "')",
-            'z-index': '9999'     			
-      		});
+            $(".big-image").css({
+              'background-image': "url('" + $source + "')",
+              'z-index': '9999'     			
+            });
 
+            $('.big-image').animate({
+              opacity: 1
+            },400);
+
+            $("body").css("overflow","hidden");
+          });
+          
+        $('.big-image').on('click', function(){
           $('.big-image').animate({
-             opacity: 1
-          },200);
-
-      		$("body").css("overflow","hidden");
-      	});
+              opacity: 0
+          },400, function(){
+            $(".big-image").css({
+              'background-image': 'none',
+              'z-index': '-9999'     			
+            });
+          });
+        
+          $("body").css("overflow","visible");
+        })
       });
 
       
 
-      $('.big-image').on('click', function(){
-        $('.big-image').animate({
-            opacity: 0
-        },200, function(){
-          $(".big-image").css({
-            'background-image': 'none',
-            'z-index': '-9999'     			
-          });
-        });
-      
-        $("body").css("overflow","visible");
-      })
 
     });
 
