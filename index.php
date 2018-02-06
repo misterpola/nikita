@@ -68,7 +68,7 @@
               opacity: 0              
             }, 100, function() {
 
-              $(location).attr('href','capture.php');
+              $(location).attr('href','capture.html');
             });
           });
         });
@@ -87,7 +87,7 @@
             $('#logo').animate({
               opacity:0
             }, 100, function(){
-              $(location).attr('href','express.php');
+              $(location).attr('href','express.html');
             })
           });
         });
