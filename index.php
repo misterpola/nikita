@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
+  
 
   <title>Nikita</title>
 </head>
@@ -50,8 +51,6 @@
       if (iOSSafari){
         var htmlHeight = $('html').height();
         $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - 69);
-      } else {
-        alert ('not safari');
       }
       var viewportWidth = $("body").innerWidth();
       $('.image-top').on('click',function(){
@@ -69,7 +68,7 @@
               opacity: 0              
             }, 100, function() {
 
-              $(location).attr('href','capture.html');
+              $(location).attr('href','capture.php');
             });
           });
         });
@@ -88,7 +87,7 @@
             $('#logo').animate({
               opacity:0
             }, 100, function(){
-              $(location).attr('href','express.html');
+              $(location).attr('href','express.php');
             })
           });
         });

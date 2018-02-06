@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //RECURSIVE FUNCTIONS PRACTICE
+
+    //PROVIDE A NUMBER, ADDS SAID NUMBER TO THE PREVIOUS ONE UNTIL 1.
+    let suma = (num,s) => {
+        if (num === 0 ) return s;
+        return suma (num - 1, num-1 + s);
+      }
+
+    //PROVIDE A NUMBER, IF THERE'S A SERIES OF SUMS THAT RESULTS IN SAID NUMBER IT'LL TELL YOU FROM WHICH ONE.
+    let fun = (num,st,sum) => {
+    if (sum === num) return st;
+    if (sum > num) return "not possible";
+    return fun (num, st+1, sum + st);     
+    }  
+
+    
+  </script>
+</body>
+</html>

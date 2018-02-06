@@ -8,11 +8,33 @@
     position: fixed;
     width: 100%;
     z-index: 999;
+    transition: all 0.5s;
     .nav-link{
         width: 100%;
         font-size: 250%;
         margin: 1em auto;
     }
+}
+
+.clicked{
+    background-color: rgba(0,0,0,0) !important;
+}
+
+#logo{
+    transition: all 0.5s;
+    -moz-transition: all 0.5s; /* Firefox 4 */
+    -webkit-transition: all 0.5s; /* Safari and Chrome */
+    -o-transition: all 0.5s; /* Opera */
+
+}
+.large{
+    width: auto;
+    max-height: 20vh;
+}
+
+.small{
+    width: auto;
+    max-height: 7vh;
 }
 
 .landing{
@@ -22,7 +44,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 2em;
+    &-express{
+        background-image: url("../img/exp.jpg");
+    }
 }
 
 .arrowBounce {

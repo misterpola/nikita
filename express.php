@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+
+</head>
+
+<!-- MAKE BODY FADE IN -->
+<body class="fade-in">
+
+  <?php include 'header.php' ?>
+
+  <!-- BACKGROUND PICTURE -->
+  <div class="container-fluid landing landing-express d-flex align-items-end justify-content-center">
+
+  </div>
+  <div class="arrowBounce"></div>
+
+  <!-- IMAGE VIEW -->
+  <div class="big-image fixed-top"></div>
+
+  <!-- BIO -->
+  <div class="bio">
+    <div class="accordion">
+      <div class="card border-0 ">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item list-group-item-light rounded-0 text-center display-4" data-toggle="collapse" data-target="#collapseBio">Bio</li>   
+            
+          <div id="collapseBio" class="collapse container-fluid bg-white show" data-parent="#accordion">
+            <div class="card-body">
+              <p class="card-text text-dark lead">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- LIST OF JOBS -->
+  <div class="jobs">
+    <div class="accordion">
+      <div class="card border-0 ">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item list-group-item-light rounded-0 text-center display-4" data-toggle="collapse" data-target="#collapseOne">Jobs</li>         
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <li class="list-group-item rounded-0">Dapibus ac facilisis in</li>
+              <li class="list-group-item rounded-0">Morbi leo risus</li>
+              <li class="list-group-item rounded-0">Porta ac consectetur ac</li>
+              <li class="list-group-item rounded-0">Vestibulum at eros</li>
+            </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIST OF EXPERIENCE -->
+  <div class="jobs">
+    <div class="accordion">
+      <div class="card border-0">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-light rounded-0 text-center display-4" data-toggle="collapse" data-target="#collapseExp">Experience </li>         
+            <div id="collapseExp" class="collapse" data-parent="#accordion">
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Morbi leo risus</li>
+              <li class="list-group-item">Porta ac consectetur ac</li>
+              <li class="list-group-item rounded-0">Vestibulum at eros</li>
+            </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO REEL -->
+  <div class="embed-responsive embed-responsive-16by9 youtube" data-loader="youtubeLoader" data-video="tH2TvzgFCU0">
+    <div class="embed-responsive-item d-flex align-items-center justify-content-center">
+      <h1 class="display-4"> Video loading </h1>
+    </div>
+  </div>
+
+  <!-- LIST OF IMAGES -->
+  <div class="images">
+
+    <img class="lazy" src="img/4.jpg">
+    <img class="lazy" src="img/6.jpg">
+    <img class="lazy" src="img/1.jpg">
+
+    <div class="card text-white">
+      <img class="lazy card-img" src="img/3.jpg" alt="Card image">
+      <div class="card-img-overlay d-flex flex-column justify-content-end">
+        <h5 class="card-title">Photo title</h5>
+        <p class="card-text">Photo text and description</p>
+      </div>
+    </div>
+
+    <div>
+      <img class="lazy squared" data-src="img/5.jpg" alt="">
+      <img class="lazy squared" data-src="img/4.jpg" alt="">
+    </div>
+
+  </div>
+
+  <footer>
+    <img src="img/logo.jpg" alt="">
+    <a href="" class="text-light"> Web by Gonz </a>
+  </footer>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/jquery.lazy.min.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

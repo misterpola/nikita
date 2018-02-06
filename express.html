@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+
+</head>
+
+<body class="fade-in">
+  <nav class="navbar navbar-expand-xs navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">
+      <img class="large" id="logo" src="img/logo.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+  <div class="collapse navbar-collapse" id="nav">
+    <div class="">
+      <div class="full navbar-nav text-center d-flex flex-column align-items-center justify-content-center">
+        <a class="nav-item nav-link text-white" href="#">CAPTURE</a>
+        <a class="nav-item nav-link text-white" href="#">EXPRESS</a>
+        <a class="nav-item nav-link text-white" href="#">CONTACT</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid landing d-flex align-items-end justify-content-center">
+
+  </div>
+  <div class="arrowBounce"></div>
+  <div class="big-image fixed-top"></div>
+
+  <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+  </div>
+
+  <div class="jobs">
+    <div class="accordion">
+      <div class="card border-0">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-dark rounded-0" data-toggle="collapse" data-target="#collapseOne">Jobs</li>         
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Morbi leo risus</li>
+              <li class="list-group-item">Porta ac consectetur ac</li>
+              <li class="list-group-item rounded-0">Vestibulum at eros</li>
+            </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="jobs">
+    <div class="accordion">
+      <div class="card border-0">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-dark rounded-0" data-toggle="collapse" data-target="#collapseExp">Experience <span class="badge float-right">9</span> </li>         
+            <div id="collapseExp" class="collapse" data-parent="#accordion">
+              <li class="list-group-item">Dapibus ac facilisis in</li>
+              <li class="list-group-item">Morbi leo risus</li>
+              <li class="list-group-item">Porta ac consectetur ac</li>
+              <li class="list-group-item rounded-0">Vestibulum at eros</li>
+            </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="images">
+
+    <img class="lazy" data-src="img/4.jpg" alt="">
+    <img class="lazy" data-src="img/6.jpg" alt="">
+    <img class="lazy" data-src="img/1.jpg" alt="">
+
+    <div class="card text-white">
+      <img class="lazy card-img" data-src="img/3.jpg" alt="Card image">
+      <div class="card-img-overlay d-flex flex-column justify-content-end">
+        <h5 class="card-title">Photo title</h5>
+        <p class="card-text">Photo text and description</p>
+      </div>
+    </div>
+
+    <div>
+      <img class="lazy squared" data-src="img/5.jpg" alt="">
+      <img class="lazy squared" data-src="img/4.jpg" alt="">
+    </div>
+
+  </div>
+
+  <footer>
+    <img src="img/logo.jpg" alt="">
+    <a href="" class="text-light"> Web by Gonz </a>
+  </footer>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/jquery.lazy.min.js"></script>
+  <script>
+
+    var mySwiper = new Swiper('.swiper-container', {
+      // Optional parameters
+      loop: true,
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }
+    });
+
+    $(document).ready(function () {
+
+      $('body').animate({
+        opacity: 1
+      }, 700, function () {
+
+        $('.lazy').Lazy({
+          // your configuration goes here
+          scrollDirection: 'vertical',
+          effect: 'fadeIn',
+          visibleOnly: true,
+          onError: function (element) {
+            console.log('error loading ' + element.data('src'));
+          },
+          youtubeLoader: function (element) {
+            var url = 'https://www.youtube.com/embed/',
+              frame = $('<iframe />')
+
+            frame.attr('width', 700)
+            frame.attr('height', 394)
+            frame.attr('frameborder', 0)
+            frame.attr('class', 'embed-responsive-item')
+            frame.attr('src', url + element.data("video"));
+
+            element.append(frame).load();
+          }
+        });
+      });
+
+      $(document).on("scroll",function(){
+        if($(document).scrollTop()>100){
+            $("#logo").removeClass("large").addClass("small");
+        } else{
+            $("#logo").removeClass("small").addClass("large");
+        }
+      });
+
+      $('.squared').on('click', function () {
+        var $source = $(this).attr('src');
+
+        $(".big-image").css({
+          'background-image': "url('" + $source + "')",
+          'z-index': '9999'
+        });
+
+        $('.big-image').animate({
+          opacity: 1
+        }, 400);
+
+        $("body").css("overflow", "hidden");
+      });
+
+      $('.big-image').on('click', function () {
+        $('.big-image').animate({
+          opacity: 0
+        }, 400, function () {
+          $(".big-image").css({
+            'background-image': 'none',
+            'z-index': '-9999'
+          });
+        });
+
+        $("body").css("overflow", "visible");
+      })
+
+
+    });
+
+  </script>
+</body>
+
+</html>

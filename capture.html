@@ -12,7 +12,9 @@
 
 <body class="fade-in">
   <nav class="navbar navbar-expand-xs navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">Logo</a>
+    <a class="navbar-brand" href="#">
+      <img id="logo" src="img/logo.png" alt="">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -57,28 +59,28 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-        <div class="swiper-slide"> 
-          <div class="card">
-            <div class="lazy embed-responsive embed-responsive-16by9" data-loader="youtubeLoader" data-video="tH2TvzgFCU0"></div>
-            <!--<div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QzdoJd5nQZg?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
-            </div> -->
+      <div class="swiper-slide"> 
+        <div class="card">
+          <div class="lazy embed-responsive embed-responsive-16by9" data-loader="youtubeLoader" data-video="tH2TvzgFCU0"></div>
+          <!--<div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/QzdoJd5nQZg?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>
+          </div> -->
+          <div class="card-body px-5 py-0">
+            <h5 class="card-title text-center display-4 mb-2">Desert</h5>
+            <p class="card-text"></p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide"> 
+        <div class="card">
+          <!--<div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Ld0MbF6yMvc?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>              
+          </div>-->
             <div class="card-body px-5 py-0">
-              <h5 class="card-title text-center display-4 mb-2">Desert</h5>
-              <p class="card-text"></p>
-            </div>
+            <h5 class="card-title text-center display-4 mb-2">Croatia</h5>
           </div>
         </div>
-        <div class="swiper-slide"> 
-          <div class="card">
-            <!--<div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Ld0MbF6yMvc?rel=0&amp;controls=0&amp;showinfo=0" allowfullscreen></iframe>              
-            </div>-->
-              <div class="card-body px-5 py-0">
-              <h5 class="card-title text-center display-4 mb-2">Croatia</h5>
-            </div>
-          </div>
-        </div>
+      </div>
     </div>
     <!-- If we need navigation buttons -->
     <div class="swiper-button-prev swiper-button-white"></div>
@@ -96,7 +98,6 @@
     
     var mySwiper = new Swiper ('.swiper-container', {
       // Optional parameters
-      loop: true,
 
       // Navigation arrows
       navigation: {
@@ -112,13 +113,7 @@
       }, 700,function(){
         
         $('.lazy').Lazy({
-          // your configuration goes here
-          scrollDirection: 'vertical',
-          effect: 'fadeIn',
-          visibleOnly: true,
-          onError: function(element) {
-              console.log('error loading ' + element.data('src'));
-          },
+          
           youtubeLoader: function(element) {
             var url = 'https://www.youtube.com/embed/',
             frame = $('<iframe />')
