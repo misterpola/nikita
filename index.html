@@ -52,8 +52,8 @@
         var htmlHeight = $('html').height();
         $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - 69);
       } else {
-        let fixJump = $('html').outerHeight();
-        $('.landing, .wrapper').css('height', fixJump);
+        var htmlHeight = $('html').height();
+        $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - 69);
       }
       var viewportWidth = $("body").innerWidth();
       $('.image-top').on('click',function(){
