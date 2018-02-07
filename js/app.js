@@ -1,5 +1,8 @@
   $(document).ready(function () {
 
+    let fixJump = $('.landing').outerHeight();
+    $('.landing').css('height', fixJump);
+
     $('body').animate({
       opacity: 1
     }, 700);
