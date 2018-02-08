@@ -42,19 +42,26 @@
   <script>
 
 
-    let ua = window.navigator.userAgent,
-        mac = !!ua.match(/macintosh/i),
-        iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i),
-        android = !!ua.match(/android/i),
-        windows = !!ua.match(/windows/i),
-        webkit = !!ua.match(/WebKit/i),
-        iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
     
     $(document).ready(function(){
-
+      
+      let ua = window.navigator.userAgent,
+          mac = !!ua.match(/macintosh/i),
+          iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i),
+          android = !!ua.match(/android/i),
+          windows = !!ua.match(/windows/i),
+          webkit = !!ua.match(/WebKit/i),
+          iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+          
       var htmlHeight = $('html').height();
 
-      
+      if (iOSSafari){
+        $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - 69);
+        alert('ios safari')
+      } else if(android) {
+        $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - 56);
+        alert('android')        
+      }
       
       var viewportWidth = $("body").innerWidth();
       alert(viewportWidth)
