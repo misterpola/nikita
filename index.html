@@ -52,22 +52,22 @@
           windows = !!ua.match(/windows/i),
           webkit = !!ua.match(/WebKit/i),
           iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
-          
+      console.log(android);
       var htmlHeight = $('html').height();
 
       if (iOSSafari){
         $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - 69);
-        alert('ios safari')
+        alert('ios safari');
       } else if(android) {
         $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - 56);
-        alert('android')        
+        alert('android');     
       }
       
       var viewportWidth = $("body").innerWidth();
-      alert(viewportWidth)
+      alert(viewportWidth);
       
       $('.image-top').on('click',function(){
-        alert('clicked')
+        alert('clicked');
         $('.top').animate({     
         width: viewportWidth + 2000
         }, 700, function() {
