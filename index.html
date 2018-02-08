@@ -50,20 +50,17 @@
         webkit = !!ua.match(/WebKit/i),
         iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
     
-
     $(document).ready(function(){
-      console.log('navigator.userAgent', navigator.userAgent);
-      console.log('mac',mac);
-      console.log('iOS',iOS);
-      console.log('android',android);
-      console.log('windows',windows);
 
       var htmlHeight = $('html').height();
+      var viewportWidth = $("body").innerWidth();
+
       if (iOSSafari){
         var adjust = 69;
       } else if(android) {
         var adjust = 56;
       }
+
       $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - adjust);
       
 
