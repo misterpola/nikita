@@ -41,21 +41,32 @@
   <script src="js/bootstrap.bundle.js"></script>
   <script>
 
-    var ua = window.navigator.userAgent;
-    var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
-    var webkit = !!ua.match(/WebKit/i);
-    var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+
+    let ua = window.navigator.userAgent,
+        mac = !!ua.match(/macintosh/i),
+        iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i),
+        android = !!ua.match(/android/i),
+        windows = !!ua.match(/windows/i),
+        webkit = !!ua.match(/WebKit/i),
+        iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
     
 
     $(document).ready(function(){
+      console.log('navigator.userAgent', navigator.userAgent);
+      console.log('mac',mac);
+      console.log('iOS',iOS);
+      console.log('android',android);
+      console.log('windows',windows);
+
+      var htmlHeight = $('html').height();
       if (iOSSafari){
-        var htmlHeight = $('html').height();
-        $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - 69);
-      } else {
-        var htmlHeight = $('html').height();
-        $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - 56);
+        var adjust = 69;
+      } else if(android) {
+        var adjust = 56;
       }
-      var viewportWidth = $("body").innerWidth();
+      $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - adjust);
+      
+
       $('.image-top').on('click',function(){
         
         $('.top').animate({     
