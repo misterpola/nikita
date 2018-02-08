@@ -42,27 +42,28 @@
   <script>
 
 
-    let ua = window.navigator.userAgent,
+   /* let ua = window.navigator.userAgent,
         mac = !!ua.match(/macintosh/i),
         iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i),
         android = !!ua.match(/android/i),
         windows = !!ua.match(/windows/i),
         webkit = !!ua.match(/WebKit/i),
-        iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+        iOSSafari = iOS && webkit && !ua.match(/CriOS/i);*/
     
     $(document).ready(function(){
 
       var htmlHeight = $('html').height();
 
-      if (iOSSafari){
+     /* if (iOSSafari){
         var adjust = 69;
       } else if(android) {
         var adjust = 56;
-      }
+      }*/
 
-      $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - adjust);
+     // $('html, body, .wrapper, .layer, .content-wrap, .image').css('height', htmlHeight - adjust);
       
       var viewportWidth = $("body").innerWidth();
+      console.log(viewportWidth)
       
       $('.image-top').on('click',function(){
         
